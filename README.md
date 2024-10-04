@@ -42,24 +42,7 @@ src
 
 We use Docker Compose to run the MySQL database. Make sure you have Docker and Docker Compose installed on your system.
 
-1. Create a `docker-compose.yml` file in the root of your project with the following content:
-
-   ```yaml
-   version: '3.1'
-   services:
-     db:
-       image: mysql:8.0
-       restart: always
-       environment:
-         MYSQL_ROOT_PASSWORD: rootpassword
-         MYSQL_DATABASE: userdb
-         MYSQL_USER: user
-         MYSQL_PASSWORD: password
-       ports:
-         - "3306:3306"
-   ```
-
-2. Run the following command to start the MySQL container:
+Run the following command to start the MySQL container:
 
    ```bash
    docker-compose up -d
