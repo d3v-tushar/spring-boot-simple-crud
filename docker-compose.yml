@@ -1,0 +1,24 @@
+
+
+services:
+  bhalow-db:
+    image: mysql:8.0
+    container_name: mysql-bhalowdb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: bhalowdb
+      MYSQL_USER: tushar
+      MYSQL_PASSWORD: tushar2151
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  mysql_data:
